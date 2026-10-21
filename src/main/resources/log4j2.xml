@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Appenders>
+		<Consola name="Consola" target="SYSTEM_OUT">
+			<PatternLayout pattern="%-level [ logger { msg % n" />
+		</Consola>
+	</Appenders>
+	<Loggers>
+		<Root level="info">
+			<AppenderRef ref="Console" />
+
+
+		</Root>
+	</Loggers>
+</Configuration>
