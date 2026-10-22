@@ -40,6 +40,7 @@ public class ServicioPelicula {
 		encontrada.setGenero(pelicula.getGenero());
 		encontrada.setDuracion(pelicula.getDuracion());
 		encontrada.setDisponible(pelicula.isDisponible());
+		encontrada.setCalificacion(pelicula.getCalificacion());
 
 		return peliculaRepository.save(encontrada);
 	}
