@@ -113,8 +113,10 @@ public class PeliculaControllers {
 
 	@GetMapping("/disponible")
 	public ResponseEntity<?> buscarPorDisponible(@RequestParam(required = false) Boolean disponible) {
+		
 		try {
 			List<Pelicula> peliculas = servicio.buscarPorDisponible(disponible);
+			
 			if (disponible != null) {
 				peliculas = servicio.buscarPorDisponible(disponible);
 
