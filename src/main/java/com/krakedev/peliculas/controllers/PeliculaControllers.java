@@ -113,10 +113,10 @@ public class PeliculaControllers {
 
 	@GetMapping("/disponible")
 	public ResponseEntity<?> buscarPorDisponible(@RequestParam(required = false) Boolean disponible) {
-		
+
 		try {
 			List<Pelicula> peliculas = servicio.buscarPorDisponible(disponible);
-			
+
 			if (disponible != null) {
 				peliculas = servicio.buscarPorDisponible(disponible);
 
@@ -131,6 +131,24 @@ public class PeliculaControllers {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
 					.body("Error al consultar pelicula disponible ");
 		}
+	}
+
+	@GetMapping("/director")
+	public ResponseEntity<?> buscarPelicula(@RequestParam(required = false) String director) {
+		try {
+			List<Pelicula> peliculas = new ArrayList<Pelicula>();
+			if (director != null) {
+				peliculas = servicio.buscarPelicula(director);
+			}
+			if (peliculas.size() <= 0) {
+				return ResponseEntity.notFound().build();
+			}
+			return ResponseEntity.ok(peliculas);
+		} catch (Exception e) {
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+					.body("Error al consultar pelicula por director");
+		}
+
 	}
 
 }

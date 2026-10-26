@@ -15,4 +15,6 @@ public interface PeliculaRepository extends JpaRepository<Pelicula, Long> {
 
 	List<Pelicula> findByDisponible(boolean disponible);
 
+	List<Pelicula> findByDirector(String director);
+
 }

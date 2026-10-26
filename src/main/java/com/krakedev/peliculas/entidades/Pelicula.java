@@ -27,12 +27,18 @@ public class Pelicula {
 	private boolean disponible;
 	@Column(nullable = false)
 	private double calificacion;
+	@Column(nullable = false)
+	private String idioma;
+	
+	
+	
+	
 
 	public Pelicula() {
 	}
 
 	public Pelicula(Long id, String nombre, String director, String genero, int duracion, boolean disponible,
-			double calificacion) {
+			double calificacion, String idioma) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -41,6 +47,7 @@ public class Pelicula {
 		this.duracion = duracion;
 		this.disponible = disponible;
 		this.calificacion = calificacion;
+		this.idioma = idioma;
 	}
 
 	public Long getId() {
@@ -98,11 +105,24 @@ public class Pelicula {
 	public void setCalificacion(double calificacion) {
 		this.calificacion = calificacion;
 	}
+	
+	
+
+	public String getIdioma() {
+		return idioma;
+	}
+
+	public void setIdioma(String idioma) {
+		this.idioma = idioma;
+	}
 
 	@Override
 	public String toString() {
 		return "Pelicula [id=" + id + ", nombre=" + nombre + ", director=" + director + ", genero=" + genero
-				+ ", duracion=" + duracion + ", disponible=" + disponible + ", calificacion=" + calificacion + "]";
+				+ ", duracion=" + duracion + ", disponible=" + disponible + ", calificacion=" + calificacion
+				+ ", idioma=" + idioma + "]";
 	}
+
+	
 
 }

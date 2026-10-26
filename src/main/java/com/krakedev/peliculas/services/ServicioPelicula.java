@@ -62,4 +62,9 @@ public class ServicioPelicula {
 		return peliculaRepository.findByDisponible(disponible);
 	}
 
+	public List<Pelicula> buscarPelicula(String director) {
+		return peliculaRepository.findByDirector(director);
+
+	}
+
 }
